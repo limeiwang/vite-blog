@@ -7,7 +7,14 @@ declare module 'vue' {
     Footer: typeof import('./src/components/Footer.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Icon: typeof import('./src/components/Icon.vue')['default']
+    LaRssSquare: typeof import('~icons/la/rss-square')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
+    RiArticleLine: typeof import('~icons/ri/article-line')['default']
+    RiLightbulbLine: typeof import('~icons/ri/lightbulb-line')['default']
+    RiMoonLine: typeof import('~icons/ri/moon-line')['default']
+    RiSunLine: typeof import('~icons/ri/sun-line')['default']
+    ToggleTheme: typeof import('./src/components/ToggleTheme.vue')['default']
+    UilGithubAlt: typeof import('~icons/uil/github-alt')['default']
   }
 }
 

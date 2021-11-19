@@ -2,7 +2,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import fs from 'fs-extra'
 import Components from 'unplugin-vue-components/vite'
-// import IconsResolver from 'unplugin-icons/resolver'
+import IconsResolver from 'unplugin-icons/resolver'
 import vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages';
 import Icons from 'unplugin-icons/vite'
@@ -14,6 +14,11 @@ import presetIcons from '@unocss/preset-icons'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: [
+      { find: '/~/', replacement: `${resolve(__dirname, 'src')}/` },
+    ],
+  },
   optimizeDeps: {
     include: [
       'vue',
@@ -59,6 +64,9 @@ export default defineConfig({
       extensions: ['vue', 'md'],
       dts: true,
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      resolvers: IconsResolver({
+        componentPrefix: '',
+      }),
     }),
     Pages({
       extensions: ['vue', 'md'],

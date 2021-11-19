@@ -12,7 +12,7 @@ import dayjs from 'dayjs'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 import App from './App.vue'
 
-const routes = autoRoutes.map((i: { path: string }) => {
+const routes: any = autoRoutes.map((i: { path: string }) => {
   return {
     ...i,
     alias: i.path.endsWith('/')
