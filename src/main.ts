@@ -1,7 +1,7 @@
 import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import './styles/prose.css'
-// import './styles/markdown.css'
+import './styles/markdown.css'
 import 'uno.css'
 
 import autoRoutes from 'pages-generated'
@@ -11,6 +11,12 @@ import { RouterScrollBehavior } from 'vue-router'
 import dayjs from 'dayjs'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 import App from './App.vue'
+
+declare module 'vue-router' {
+  interface RouteMeta {
+    frontmatter: any
+  }
+}
 
 const routes: any = autoRoutes.map((i: { path: string }) => {
   return {

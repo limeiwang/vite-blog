@@ -1,13 +1,16 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import fs from 'fs-extra'
-import Components from 'unplugin-vue-components/vite'
-import IconsResolver from 'unplugin-icons/resolver'
 import vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages';
 import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Components from 'unplugin-vue-components/vite'
+import Markdown from 'vite-plugin-md'
+import Prism from 'markdown-it-prism'
 import matter from 'gray-matter'
 import AutoImport from 'unplugin-auto-import/vite'
+// import anchor from 'markdown-it-anchor'
 import Unocss from 'unocss/vite'
 import { presetAttributify, presetUno } from 'unocss'
 import presetIcons from '@unocss/preset-icons'
@@ -49,9 +52,11 @@ export default defineConfig({
         presetUno(),
       ],
     }),
+
     vue({
         include: [/\.vue$/, /\.md$/],
     }),
+
     AutoImport({
       imports: [
         'vue',
@@ -60,6 +65,7 @@ export default defineConfig({
         '@vueuse/head',
       ],
     }),
+
     Components({
       extensions: ['vue', 'md'],
       dts: true,
@@ -68,6 +74,7 @@ export default defineConfig({
         componentPrefix: '',
       }),
     }),
+
     Pages({
       extensions: ['vue', 'md'],
       pagesDir: 'pages',
@@ -83,6 +90,25 @@ export default defineConfig({
         return route
       },
     }),
+
+    Markdown({
+      wrapperComponent: 'post',
+      wrapperClasses: 'prose m-auto',
+      headEnabled: true,
+      markdownItOptions: {
+        quotes: '""\'\'',
+      },
+      markdownItSetup(md) {
+        md.use(Prism)
+        // md.use(anchor, {
+        //   permalink: anchor.permalink.linkInsideHeader({
+        //     symbol: '#',
+        //     renderAttrs: () => ({ 'aria-hidden': 'true' }),
+        //   }),
+        // })
+      }
+    }),
+
     Icons({
       defaultClass: 'inline',
       defaultStyle: 'vertical-align: sub;',

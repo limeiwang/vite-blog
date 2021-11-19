@@ -21,12 +21,15 @@
           <span class="lt-md:hidden">Projects</span>
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
+        <router-link to="/bookmarks" title="Bookmarks" class="lt-md:hidden">
+          <ri-bookmark-line />
+        </router-link>
         <a href="https://github.com/limeiwang" target="_blank" title="GitHub">
           <uil-github-alt />
         </a>
-        <a href="/feed.xml" target="_blank" title="RSS" class="lt-md:hidden">
+        <!-- <a href="/feed.xml" target="_blank" title="RSS" class="lt-md:hidden">
           <la-rss-square style="font-size:1.25rem; margin: 0 -0.125rem;" />
-        </a>
+        </a> -->
         <toggle-theme />
       </div>
     </nav>
