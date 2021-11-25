@@ -30,7 +30,7 @@ defineProps<{ projects: Record<string, any[]> }>()
       </a>
     </div>
   </template>
-  <div class="markdown mt-10">
+  <!-- <div class="markdown mt-10">
     <p class="opacity-75">
       <em>
         Thanks for getting intersted in my works! If like them or find them useful, consider
@@ -41,7 +41,7 @@ defineProps<{ projects: Record<string, any[]> }>()
         >&nbsp;sponsoring me&nbsp;</a>to support me keeping them sustainable. Cheers! :)
       </em>
     </p>
-  </div>
+  </div> -->
 </template>
 
 <style scoped>
