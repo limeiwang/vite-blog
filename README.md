@@ -4,7 +4,7 @@
 
 ## Why
 
-当我在不经意间看到antfu大佬的，github主页的 blog是就被吸引了。我也想拥有一个同样属于自己的blog，所以我开始学习他是如何做到的。
+当我在不经意间看到antfu大佬的 blog 简洁的设计深深吸引了我，也想拥有一个属于自己的blog，所以我开始学习他是如何做到的。
 
 ## How
 
@@ -20,9 +20,8 @@
 - [x] 🗒 [支持 Markdown](https://github.com/antfu/vite-plugin-md)
 - [x] 📥 [直接使用 Composition API 和其他 API](https://github.com/antfu/unplugin-auto-import)
 - [x] 🦾 支持 typescript
-
+- [x] 部署在 Netlify 上，零配置
 - [] PWA
 - [] 通过vite-ssg的服务器端生成（SSG）
-- [] 部署在 Netlify 上，零配置
 
-还有很多不足的地方，期待你加入。
+还有很多不足的地方，期待你加入进来，一起学习。
