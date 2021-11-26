@@ -20,9 +20,8 @@
 - [x] 🗒 [支持 Markdown](https://github.com/antfu/vite-plugin-md)
 - [x] 📥 [直接使用 Composition API 和其他 API](https://github.com/antfu/unplugin-auto-import)
 - [x] 🦾 支持 typescript
-
+- [x] 部署在 Netlify 上，零配置
 - [] PWA
 - [] 通过vite-ssg的服务器端生成（SSG）
-- [] 部署在 Netlify 上，零配置
 
 还有很多不足的地方，期待你加入。
