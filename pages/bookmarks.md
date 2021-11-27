@@ -1,5 +1,5 @@
 ---
-title: Bookmarks - Meiwang Li
+title: Bookmarks - Likid
 display: Bookmarks
 subtitle: Some of my favorite websites/tools with excellent design and UX that I highly recommend
 ---

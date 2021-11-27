@@ -9,7 +9,7 @@
 <script setup lang="ts">
 useHead({
   meta: [
-    { property: 'og:title', content: 'Meiwang Li' },
+    { property: 'og:title', content: 'Likid' },
     { property: 'og:image', content: 'https://jovial-almeida-738c2e.netlify.app/wechat.pngavatar.png' },
   ],
 })
