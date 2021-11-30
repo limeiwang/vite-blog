@@ -8,19 +8,17 @@ description: 抽象语法树AST
 
 当我在前端道路上越走越远的时候，渐渐发现各种厉害的构建工具，比如：webpack，vite，eslint，babel等…，这些牛逼的工具其背后的都离不开，一个叫AST的东西。那什么叫AST？AST（Abstract Syntax Tree）中文叫做抽象语法树。
 
-有人肯定会问了，什么叫抽象语法树？ 它为什么抽象了？
+有人肯定会问了，什么叫抽象语法树？ 它为什么抽象了？在回答之前，我们先看一下代码组织结构。
 
-回答之前，我们先看一下代码组织结构
-
-```JavaScript
+```js
 const a = 'hello world';
 ```
 
-如上图，是我们正常在写的JavaScript代码。细心的人可看到，代码的左边和右边使用 **=** 号连接的。
+如上图，正是我们常写的JavaScript代码。细心的人可以观察到代码中是由符号 **=** 组成的。
 
-在看一下AST抽象语法树转换后的代码
+在看一下转换后的AST抽象语法树代码
 
-```JavaScript
+```json
 {
   "type": "Program",
   "start": 0,
@@ -60,9 +58,9 @@ const a = 'hello world';
 
 对比转换前后的差别，就可以看出为什么抽象了。
 
-简单理解就是原来我们写的代码有各种分隔符号组合而成，而转换后的代码没有了分隔符符关联，使用的是json描述的所以是抽象语法树。没有分隔符了那太抽象了...
+简单理解就是原来我们写的代码有各种分隔符号组合而成，而转换后的代码没有了各种符号的关联，使用的是JSON描述的。所以是抽象语法树，没有分隔符了那真是太抽象了...
 
-什么叫AST抽象语法树简单的理解就是将字符串解析成json，整理成的json（清爽）比直接解析字符串简单的多[测试网站](https://astexplorer.net/)。
+什么叫AST抽象语法树简单的理解就是将字符串解析成JSON，整理成的JSON（清爽）比直接解析字符串简单的多[测试网站](https://astexplorer.net/)。
 
 ## JavaScript转换AST工具
 
@@ -96,7 +94,7 @@ const a = 'hello world';
 
 上述`const a = 'hello world'`经过语法分析后生成的`AST`如下：
 
-```JavaScript
+```json
 [
     {
         "type": "Keyword",
@@ -124,7 +122,7 @@ const a = 'hello world';
 
 上述`const a = 'hello world'`经过语法分析后生成的`AST`如下：
 
-```JavaScript
+```json
 {
   "type": "Program",
   "body": [
@@ -160,7 +158,7 @@ const a = 'hello world';
 
 首先我们需要分析源代码生成的`AST`和目标代码生成的`AST`具体有何不同。 以下是`const b = 'hello world'`生成的AST：
 
-```JavaScript
+```json
 {
   "type": "Program",
   "body": [
@@ -192,7 +190,7 @@ const a = 'hello world';
 
 我们需要安装[estraverse](https://link.juejin.cn/?target=https://github.com/estools/estraverse)（遍历AST）和[escodegen](https://link.juejin.cn/?target=https://github.com/estools/escodegen)（根据AST生成JS）这两个包。
 
-```JavaScript
+```js
 const esprima = require('esprima');
 const estraverse = require('estraverse');
 const escodegen = require('escodegen');
